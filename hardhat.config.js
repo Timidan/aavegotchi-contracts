@@ -22,39 +22,10 @@ task('accounts', 'Prints the list of accounts', async () => {
 // Go to https://buidler.dev/config/ to learn more
 module.exports = {
   networks: {
-    hardhat: {
-      blockGasLimit: 20000000,
-      gas: 'auto'
-    },
-    matic: {
-      url: process.env.MATIC_URL,
-      accounts: [process.env.SECRET],
-      blockGasLimit: 20000000,
-      gasPrice: 1000000000,
-      timeout: 90000
-    },
-    mumbai: {
-      url: 'https://rpc-mumbai.matic.today',
-      accounts: [process.env.SECRET],
-      blockGasLimit: 20000000,
-      gasPrice: 1000000000
-    },
-    gorli: {
-      url: process.env.GORLI,
-      accounts: [process.env.SECRET],
-      blockGasLimit: 20000000,
-      gasPrice: 2100000000
-    },
     kovan: {
-      url: process.env.KOVAN_URL,
-      accounts: [process.env.SECRET],
+      url:"https://kovan.infura.io/v3/08db7d408b3345f6a0e1184f99df770d",
+      accounts: ['0xdb931058a6a27a37f82003683b69daf5a479370e37869837ef1d77871a1f617f'],
       gasPrice: 5000000000
-    },
-    ethereum: {
-      url: process.env.MAINNET_URL,
-      accounts: [process.env.SECRET],
-      blockGasLimit: 20000000,
-      gasPrice: 2100000000
     }
   },
   gasReporter: {

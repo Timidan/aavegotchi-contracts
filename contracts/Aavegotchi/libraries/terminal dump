@@ -1,0 +1,301 @@
+Account: 0x8cAFB4d6ff14E0Cb2999e25C6f63E5BdC4865428
+---
+contracts/Aavegotchi/facets/BridgeFacet.sol:BridgeFacet deploy gas used:1,623,036
+contracts/Aavegotchi/facets/AavegotchiFacet.sol:AavegotchiFacet deploy gas used:3,024,615
+AavegotchiGameFacet deploy gas used:3,298,082
+SvgFacet deploy gas used:2,648,299
+contracts/Aavegotchi/facets/ItemsFacet.sol:ItemsFacet deploy gas used:4,792,806
+ItemsTransferFacet deploy gas used:2,342,238
+CollateralFacet deploy gas used:1,580,755
+DAOFacet deploy gas used:2,983,769
+VrfFacet deploy gas used:1,024,251
+ShopFacet deploy gas used:1,185,731
+MetaTransactionsFacet deploy gas used:485,108
+ERC1155MarketplaceFacet deploy gas used:2,743,780
+ERC721MarketplaceFacet deploy gas used:3,872,206
+--
+Using already deployed BridgeFacet: 0x944105A47F7215B81ec501183e30AEe0A4c4E5d3
+--
+Using already deployed AavegotchiFacet: 0x2Dbc81BEa1fa19F58e2850fA7B3be38c90bB9DfF
+--
+Using already deployed AavegotchiGameFacet: 0x528F8054A0091C9E9E39070c613Da50d8dA7862d
+--
+Using already deployed SvgFacet: 0xDf6397F1Da249207edC5AB1BE3C18669e71dbD59
+--
+Using already deployed ItemsFacet: 0x24c4fa63f476fa6A826aF21E9c834F11fb3324cD
+--
+Using already deployed ItemsTransferFacet: 0xf2e0b2dDC1267AD529681A222efC030b7f987A4a
+--
+Using already deployed CollateralFacet: 0xBA39B65F58b8404BA6985e829E088c2280364F93
+--
+Using already deployed DAOFacet: 0xC4FC07d3776696350bba8B2A29fB78435eF40237
+--
+Using already deployed VrfFacet: 0xeB7B850569279064d55F91e521e6b875cD37007a
+--
+Using already deployed ShopFacet: 0x25D6F20c961BB1EA9c00300DC37913A98132Ae43
+--
+Using already deployed MetaTransactionsFacet: 0xf4FCAe3eC4C712304d96E8b8fcf18F923e031587
+--
+Using already deployed ERC1155MarketplaceFacet: 0x986EfbFE3E8a23Cb24A0d024c900C8d56Eb9b0d9
+--
+Using already deployed ERC721MarketplaceFacet: 0x09A6A4c1e919252B33c74D5a437fB4c6fF8764FC
+--
+--
+Setting up diamondCut args
+--
+BridgeFacet
+[
+  'childChainManager()',
+  'deposit(address,bytes)',
+  'setChildChainManager(address)',
+  'withdrawAavegotchiBatch(uint256[])',
+  'withdrawItemsBatch(uint256[],uint256[])'
+]
+--
+AavegotchiFacet
+[
+  'allAavegotchisOfOwner(address)',
+  'approve(address,uint256)',
+  'balanceOf(address)',
+  'getAavegotchi(uint256)',
+  'getApproved(uint256)',
+  'isApprovedForAll(address,address)',
+  'name()',
+  'ownerOf(uint256)',
+  'safeTransferFrom(address,address,uint256)',
+  'safeTransferFrom(address,address,uint256,bytes)',
+  'setApprovalForAll(address,bool)',
+  'symbol()',
+  'tokenByIndex(uint256)',
+  'tokenIdsOfOwner(address)',
+  'tokenOfOwnerByIndex(address,uint256)',
+  'tokenURI(uint256)',
+  'totalSupply()',
+  'transferFrom(address,address,uint256)'
+]
+--
+AavegotchiGameFacet
+[
+  'aavegotchiLevel(uint256)',
+  'aavegotchiNameAvailable(string)',
+  'availableSkillPoints(uint256)',
+  'baseRarityScore(int16[6])',
+  'claimAavegotchi(uint256,uint256,uint256)',
+  'currentHaunt()',
+  'getNumericTraits(uint256)',
+  'ghstAddress()',
+  'interact(uint256[])',
+  'kinship(uint256)',
+  'modifiedTraitsAndRarityScore(uint256)',
+  'portalAavegotchiTraits(uint256)',
+  'rarityMultiplier(int16[6])',
+  'revenueShares()',
+  'setAavegotchiName(uint256,string)',
+  'spendSkillPoints(uint256,int16[4])',
+  'xpUntilNextLevel(uint256)'
+]
+--
+SvgFacet
+[
+  'getAavegotchiSvg(uint256)',
+  'getItemSvg(uint256)',
+  'portalAavegotchisSvg(uint256)',
+  'storeSvg(string,(bytes32,uint256[])[])'
+]
+--
+ItemsFacet
+[
+  'balanceOf(address,uint256)',
+  'balanceOfBatch(address[],uint256[])',
+  'balanceOfToken(address,uint256,uint256)',
+  'equipWearables(uint256,uint16[16])',
+  'equippedWearables(uint256)',
+  'getItemType(uint256)',
+  'getItemTypes(uint256[])',
+  'getWearableSet(uint256)',
+  'getWearableSets()',
+  'itemBalances(address)',
+  'itemBalancesOfToken(address,uint256)',
+  'itemBalancesOfTokenWithTypes(address,uint256)',
+  'itemBalancesWithTypes(address)',
+  'setBaseURI(string)',
+  'totalWearableSets()',
+  'uri(uint256)',
+  'useConsumables(uint256,uint256[],uint256[])'
+]
+--
+ItemsTransferFacet
+[
+  'batchTransferAsChild(address,uint256,address,uint256,uint256[],uint256[])',
+  'batchTransferFromParent(address,uint256,address,uint256[],uint256[])',
+  'batchTransferToParent(address,address,uint256,uint256[],uint256[])',
+  'safeBatchTransferFrom(address,address,uint256[],uint256[],bytes)',
+  'safeTransferFrom(address,address,uint256,uint256,bytes)',
+  'transferAsChild(address,uint256,address,uint256,uint256,uint256)',
+  'transferFromParent(address,uint256,address,uint256,uint256)',
+  'transferToParent(address,address,uint256,uint256,uint256)'
+]
+--
+CollateralFacet
+[
+  'collateralBalance(uint256)',
+  'collateralInfo(uint256)',
+  'collaterals()',
+  'decreaseAndDestroy(uint256,uint256)',
+  'decreaseStake(uint256,uint256)',
+  'getCollateralInfo()',
+  'increaseStake(uint256,uint256)'
+]
+--
+DAOFacet
+[
+  'addCollateralTypes((address,(int16[6],bytes3,bytes3,bytes3,uint8,uint8,uint16,bool))[])',
+  'addItemTypes((string,string,string,int8[6],bool[16],uint8[],(uint8,uint8,uint8,uint8),uint256,uint256,uint256,uint32,uint8,bool,uint16,bool,uint8,int16,uint32)[])',
+  'addItemTypesAndSvgs((string,string,string,int8[6],bool[16],uint8[],(uint8,uint8,uint8,uint8),uint256,uint256,uint256,uint32,uint8,bool,uint16,bool,uint8,int16,uint32)[],string,(bytes32,uint256[])[])',
+  'addWearableSets((string,uint8[],uint16[],int8[5])[])',
+  'createHaunt(uint24,uint96,bytes3)',
+  'gameManager()',
+  'grantExperience(uint256[],uint256[])',
+  'mintItems(address,uint256[],uint256[])',
+  'setDao(address,address)',
+  'setGameManager(address)',
+  'updateCollateralModifiers(address,int16[6])',
+  'updateItemTypeMaxQuantity(uint256[],uint256[])'
+]
+--
+VrfFacet
+[
+  'changeVrf(uint256,bytes32,address,address)',
+  'keyHash()',
+  'link()',
+  'linkBalance()',
+  'openPortals(uint256[])',
+  'rawFulfillRandomness(bytes32,uint256)',
+  'removeLinkTokens(address,uint256)',
+  'vrfCoordinator()'
+]
+--
+ShopFacet
+[
+  'buyPortals(address,uint256)',
+  'purchaseItemsWithGhst(address,uint256[],uint256[])'
+]
+--
+MetaTransactionsFacet
+[
+  'executeMetaTransaction(address,bytes,bytes32,bytes32,uint8)',
+  'getNonce(address)'
+]
+--
+ERC1155MarketplaceFacet
+[
+  'cancelERC1155Listing(uint256)',
+  'cancelERC1155Listings(uint256[])',
+  'executeERC1155Listing(uint256,uint256,uint256)',
+  'getERC1155Category(address,uint256)',
+  'getERC1155Listing(uint256)',
+  'getERC1155ListingFromToken(address,uint256,address)',
+  'getERC1155Listings(uint256,string,uint256)',
+  'getListingFeeInWei()',
+  'getOwnerERC1155Listings(address,uint256,string,uint256)',
+  'setERC1155Listing(address,uint256,uint256,uint256)',
+  'setListingFee(uint256)',
+  'updateBatchERC1155Listing(address,uint256[],address)',
+  'updateERC1155Listing(address,uint256,address)'
+]
+--
+ERC721MarketplaceFacet
+[
+  'addERC721Listing(address,uint256,uint256)',
+  'cancelERC721Listing(uint256)',
+  'cancelERC721ListingByToken(address,uint256)',
+  'cancelERC721Listings(uint256[])',
+  'executeERC721Listing(uint256)',
+  'getAavegotchiListing(uint256)',
+  'getAavegotchiListings(uint256,string,uint256)',
+  'getERC721Category(address,uint256)',
+  'getERC721Listing(uint256)',
+  'getERC721ListingFromToken(address,uint256,address)',
+  'getERC721Listings(uint256,string,uint256)',
+  'getOwnerAavegotchiListings(address,uint256,string,uint256)',
+  'getOwnerERC721Listings(address,uint256,string,uint256)',
+  'updateERC721Listing(address,uint256,address)'
+]
+--
+--
+Deploying contracts/Aavegotchi/InitDiamond.sol:InitDiamond
+Encoding diamondCut init function call
+Deploying AavegotchiDiamond
+Diamond deploy transaction hash:0xee1ddbe905ab19f41f3b56e2cbd1f11368e5b9ff3a73f1648506081014c93d63
+AavegotchiDiamond deployed: 0x71A023b48752Ece02C05dffFBF5Ffe914AD490fE
+Diamond owner: 0x8cAFB4d6ff14E0Cb2999e25C6f63E5BdC4865428
+DiamondCut success!
+Transaction hash:0xc041c25e02c2e162c1d76501dc923ac3909c790e9ffeb22c80ed107780f69d80
+--
+Aavegotchi diamond address:0x71A023b48752Ece02C05dffFBF5Ffe914AD490fE
+Aavegotchi diamond deploy gas used:3,819,168
+Haunt created:92,043
+Aavegotchi diamond deploy gas used:92,043
+Adding Collateral Types
+Adding Collateral Types gas used::1,066,146
+Adding Item Types
+Adding Item Types gas used::10,211,649
+Adding Item Types gas used::10,598,882
+Adding Item Types gas used::10,186,054
+Adding Wearable Sets
+Adding Wearable Sets gas used::6,710,849
+Adding Wearable Sets
+Adding Wearable Sets gas used::6,412,601
+Uploading Wearable Svgs
+Number of wearables:130
+Uploading 0 to 22 wearable SVGs
+------------- SVG Size Info ---------------
+wearables:0,1416,917,290,1416,944,386,579,3127,421,819,2163,181,376,1247,2533,2556,815,1231,1097,242,624
+Total sizes:23380
+Gas used:5,674,369
+-------------------------------------------
+Uploading 22 to 52 wearable SVGs
+------------- SVG Size Info ---------------
+wearables:2266,456,391,892,205,128,1441,217,410,1505,269,623,348,599,807,1075,422,1406,608,156,1115,1574,724,821,1211,1045,400,630,1554,478
+Total sizes:23776
+Gas used:5,936,716
+-------------------------------------------
+Uploading 52 to 88 wearable SVGs
+------------- SVG Size Info ---------------
+wearables:838,734,3273,160,1149,193,177,127,716,1500,1702,2415,203,893,339,1041,376,81,391,600,138,449,1617,372,699,324,508,198,267,291,504,232,89,748,330,687
+Total sizes:24361
+Gas used:6,207,263
+-------------------------------------------
+Uploading 88 to 109 wearable SVGs
+------------- SVG Size Info ---------------
+wearables:376,1318,1119,6250,104,210,115,476,321,122,422,419,568,701,1626,348,2605,4420,702,710,594
+Total sizes:23526
+Gas used:5,667,149
+-------------------------------------------
+Uploading 109 to 128 wearable SVGs
+------------- SVG Size Info ---------------
+wearables:1309,632,1139,2098,135,5931,5926,488,149,775,338,652,246,611,153,1347,491,965,757
+Total sizes:24142
+Gas used:5,752,805
+-------------------------------------------
+Uploading 128 to 130 wearable SVGs
+------------- SVG Size Info ---------------
+wearables:973,765
+Total sizes:1738
+Gas used:490,614
+-------------------------------------------
+Uploading aavegotchi SVGs
+------------- SVG Size Info ---------------
+aavegotchi:6721,6466,1158,2624,1316
+Total sizes:18285
+Gas used:4,162,835
+-------------------------------------------
+Uploading collaterals and eyeShapes
+------------- SVG Size Info ---------------
+collaterals:202,506,265,195,206,322,557,696,311
+eyeShapes:317,1679,739,1033,829,249,335,249,263,147,263,324,407,435,636,623,564,569,517,2249,373,546,508,649,525
+Total sizes:18288
+Uploaded SVGs
+Gas used:4,879,501
+-------------------------------------------
+Total gas used: 119,565,363
