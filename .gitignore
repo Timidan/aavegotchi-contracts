@@ -10,3 +10,4 @@ coverage
 contracts/Aavegotchi/facets/XingyunFacet.sol
 scripts/dep.js
 scripts/portals.js
+hardhat.config.js
