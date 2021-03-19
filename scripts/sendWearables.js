@@ -3,7 +3,7 @@ async function main () {
 
     let addressTest= ['0x8cAFB4d6ff14E0Cb2999e25C6f63E5BdC4865428','0x11d4620D850e1E152fE82Ef90C26268b1a78Aa40']
     let itemIds= [55,56,57,58,59]
-    let quantities= [1,2,3,4,5]
+    let quantities= [1,1,1,1,1]
 
   
     const dao = await ethers.getContractAt('DAOFacet', diamondAddress)
