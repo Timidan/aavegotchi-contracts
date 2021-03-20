@@ -1,5 +1,5 @@
 async function main() {
-  const diamondAddress = 'diamond address on mainnet'
+  const diamondAddress = 'diamond address'
 
   let recipient = ['0x5e31c357d03e9528e9bf95bd16e5c1ab3f7d37d0',
     '0x2c123fc5c27888571cd525e8ae9b0c5ff848386d',
@@ -402,7 +402,7 @@ async function main() {
     if (!receipt.status) {
       throw Error(`Not Sent: ${sendRewards.hash}`)
     }
-    console.log('Minted and sent at', sendRewards.hash)
+    console.log('Minted and sent to', recipient[i], 'at txn' ,sendRewards.hash , i)
   }
 }
 
