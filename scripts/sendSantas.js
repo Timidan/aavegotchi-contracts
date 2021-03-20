@@ -396,9 +396,7 @@ async function main() {
 
   const dao = await ethers.getContractAt('DAOFacet', diamondAddress)
 
-  var i;
-
-  for (i = 0; i < recipient.length; i++) {
+  for (let i = 0; i < recipient.length; i++) {
     const sendRewards = await dao.mintItems(recipient[i], itemIds, quantities)
     const receipt = await sendRewards.wait()
     if (!receipt.status) {
