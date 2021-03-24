@@ -186,8 +186,12 @@ contract ItemsFacet is Modifiers {
 
         for (uint256 slot; slot < EQUIPPED_WEARABLE_SLOTS; slot++) {
             uint256 wearableId = _equippedWearables[slot];
-
-            if (wearableId == 0) {
+            
+            //user does not have it in inventory anymore
+            //remove from aavegotci and transfer back to user
+            if (wearableId == 0 ) {
+                LibItems.removeFromParent(address(this),_tokenId,wearableId,1);
+                LibItems.addToOwner(sender,_tokenId,1);
                 continue;
             }
             ItemType storage itemType = s.itemTypes[wearableId];
@@ -234,6 +238,8 @@ contract ItemsFacet is Modifiers {
         }
         emit EquipWearables(_tokenId, aavegotchi.equippedWearables, _equippedWearables);
         aavegotchi.equippedWearables = _equippedWearables;
+        
+
         LibAavegotchi.interact(_tokenId);
     }
 
