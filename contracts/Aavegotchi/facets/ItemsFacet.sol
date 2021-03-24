@@ -186,10 +186,11 @@ contract ItemsFacet is Modifiers {
 
         for (uint256 slot; slot < EQUIPPED_WEARABLE_SLOTS; slot++) {
             uint256 wearableId = _equippedWearables[slot];
+            uint256 existingEquippedWearables=aavegotchi.equippedWearables[slot];
             
             //user does not have it in inventory anymore
             //remove from aavegotci and transfer back to user
-            if (wearableId == 0 ) {
+            if (wearableId == existingEquippedWearables ) {
                 LibItems.removeFromParent(address(this),_tokenId,wearableId,1);
                 LibItems.addToOwner(sender,_tokenId,1);
                 continue;
