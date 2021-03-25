@@ -188,18 +188,34 @@ contract ItemsFacet is Modifiers {
             uint256 wearableId = _equippedWearables[slot];
             uint256 existingEquippedWearableId=aavegotchi.equippedWearables[slot];
             
-         //user has not equipped it yet
-            if (wearableId == 0 ){
+            //if new value for wearable is not zero and same as existing equipped wearableId
+            //don't uneqip the existing wearable
+            if (wearableId != 0 && wearableId==existingEquippedWearableId){
                 continue;
             }
-                //user has equipped
-               //user does not have it in inventory anymore
-            //remove from aavegotchi and transfer back to user
-            if (wearableId == existingEquippedWearableId ) {
-                LibItems.removeFromParent(address(this),_tokenId,wearableId,1);
-                LibItems.addToOwner(sender,_tokenId,1);
-                continue;
+            
+         
+            
+            //if new value for the wearable is not 0 and is not the same as existing equipped wearable  
+            //unequip the existing wearable and equip the new wearable
+            if (wearableId !=0 && wearableId!=existingEquippedWearableId){
+                uint256 toUnequip= existingEquippedWearableId;
+                 LibItems.removeFromParent(address(this),toUnequip,wearableId,1);
+                 LibItems.addToOwner(sender,toUnequip,1);
+               continue;
             }
+            
+            //if the new value for the wearable is 0 a wearable is equipped in that slot
+            //unequip the wearable and send back to the user while removing ownership from the aavegotchi
+            if (wearableId == 0 && existingEquippedWearableId !=0){
+                uint256 toUnequip= existingEquippedWearableId;
+                 LibItems.removeFromParent(address(this),toUnequip,wearableId,1);
+                 LibItems.addToOwner(sender,toUnequip,1);
+               continue;
+            }
+                    
+          
+         
             ItemType storage itemType = s.itemTypes[wearableId];
             require(aavegotchiLevel >= itemType.minLevel, "ItemsFacet: Aavegotchi level lower than minLevel");
             require(itemType.category == LibItems.ITEM_CATEGORY_WEARABLE, "ItemsFacet: Only wearables can be equippped");
@@ -229,7 +245,10 @@ contract ItemsFacet is Modifiers {
                 }
             }
 
-            if (nftBalance < neededBalance) {
+            //if new value for wearable is not 0 and there  is no equipped wearable in that slot
+            //equip the new wearable to that slot
+            
+            if (nftBalance < neededBalance && wearableId== 0 && existingEquippedWearableId != 0) {
                 uint256 ownerBalance = s.ownerItemBalances[sender][wearableId];
                 require(nftBalance + ownerBalance >= neededBalance, "ItemsFacet: Wearable is not in inventories");
                 uint256 balToTransfer = neededBalance - nftBalance;
@@ -241,12 +260,12 @@ contract ItemsFacet is Modifiers {
                 emit LibERC1155.TransferSingle(sender, sender, address(this), wearableId, balToTransfer);
                 LibERC1155Marketplace.updateERC1155Listing(address(this), wearableId, sender);
             }
-        }
+    
         emit EquipWearables(_tokenId, aavegotchi.equippedWearables, _equippedWearables);
         aavegotchi.equippedWearables = _equippedWearables;
-        
-
         LibAavegotchi.interact(_tokenId);
+    }
+    
     }
 
     function useConsumables(
