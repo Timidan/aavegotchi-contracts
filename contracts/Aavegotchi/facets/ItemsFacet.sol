@@ -194,7 +194,11 @@ contract ItemsFacet is Modifiers {
                 continue;
             }
             
-         
+            //if the new wearable value is 0 and the slot is not equipped onlyAavegotchiOwner
+            //do nothing
+             if (wearableId==existingEquippedWearableId) {
+                  continue;
+            }
             
             //if new value for the wearable is not 0 and is not the same as existing equipped wearable  
             //unequip the existing wearable and equip the new wearable
