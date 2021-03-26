@@ -206,6 +206,7 @@ contract ItemsFacet is Modifiers {
                 uint256 toUnequip= existingEquippedWearableId;
                  LibItems.removeFromParent(address(this),toUnequip,wearableId,1);
                  LibItems.addToOwner(sender,toUnequip,1);
+                emit LibERC1155.TransferSingle(address(this), address(this), sender, toUnequip,1);
                continue;
             }
             
